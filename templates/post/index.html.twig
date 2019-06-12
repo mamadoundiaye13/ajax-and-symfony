@@ -17,6 +17,16 @@
                         <h3>{{post.title}}</h3>
                         <p>{{post.introduction}}</p>
                         <a href="#" class="btn btn-primary">Lire la suite</a>
+                        <a href="#" class="btn btn-link js-like" >
+                            {% if app.user and post.isLikedByUser(app.user) %}
+                                <i class="fa fa-heart" style="color: hotpink;"></i>
+                            {% else %}
+                                <i class="far fa-heart" style="color: hotpink;"></i>
+                            {% endif %}
+
+                            <span class="js-likes"> 10 </span>
+                            <span class="js-label"> j'aime</span>
+                        </a>
                     </div>
                 </div>
             {% endfor %}
